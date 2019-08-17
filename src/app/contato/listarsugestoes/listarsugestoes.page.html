@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Lista de Sugestões</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let sugestao of listaSugestoes | async">
+      <ion-label>{{ sugestao.sg }}</ion-label>
+    </ion-item>
+  </ion-list>
+  <ion-button href="sugestoes"> Voltar </ion-button>
+</ion-content>

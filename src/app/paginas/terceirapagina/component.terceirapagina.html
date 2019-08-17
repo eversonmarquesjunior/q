@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title color="dark">
+      <h1>Elementos</h1>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class='ion-padding'>
+
+    <ion-label>Selecione o elemento químico:</ion-label>
+
+    <ion-select [(ngModel)]="endereco" multiple="false" okText="Selecionar">
+      <ion-select-option value="oxigenio">Oxigênio</ion-select-option>
+      <ion-select-option value="carbono">Carbono</ion-select-option>
+      <ion-select-option value="fluor">Fluor</ion-select-option>
+      <ion-select-option value="hidrogenio">Hidrogênio</ion-select-option>
+      <ion-select-option value="cloro">Cloro</ion-select-option>
+    </ion-select>
+
+    <ion-img src="https://static.manualdaquimica.com/conteudo/images/elementos-quimicos-na-tabela-periodica-55ae8919448ab.jpg"></ion-img>
+    <br />
+
+    <ion-button expand="full" shape="around" (click)="proximo()">Próximo</ion-button>
+    <ion-button expand="full" shape="around" href="segundapagina">Voltar</ion-button>
+    <br />
+    <br />
+    <ion-button expand="full" shape="around" href="quartapagina">Ir para as Substâncias</ion-button>
+  </div>

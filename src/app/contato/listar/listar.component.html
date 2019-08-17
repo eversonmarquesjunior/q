@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Lista
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let contato of listaContatos | async">
+      <ion-label>{{ contato.nome }}</ion-label>
+      <ion-label>{{ contato.idade }}</ion-label>
+    </ion-item>
+  </ion-list>
+  <br />
+  <ion-button href="cadastrar"> Voltar </ion-button>
+</ion-content>

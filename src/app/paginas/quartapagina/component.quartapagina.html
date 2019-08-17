@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title color="dark">
+      <h1>Substâncias</h1>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class='ion-padding'>
+
+    <ion-label>Selecione a substância química:</ion-label>
+    <br />
+    <ion-select [(ngModel)]="endereco2" multiple="false" okText="Selecionar">
+      <ion-select-option value="agua">Monóxido de Di-hidrogênio</ion-select-option>
+      <ion-select-option value="gascarbonico">Dióxido de Carbono</ion-select-option>
+      <ion-select-option value="sal">Cloreto de Sódio</ion-select-option>
+      <ion-select-option value="acetona">Propanona</ion-select-option>
+      <ion-select-option value="vinagre">Ácido Acético</ion-select-option>
+    </ion-select>
+
+    <br />
+    <ion-img
+      src="https://s1.static.brasilescola.uol.com.br/artigos/as-substancias-inorganicas-sao-foco-estudo-quimica-inorganica-55f344765507d.jpg?i=https://brasilescola.uol.com.br/upload/conteudo/images/as-substancias-inorganicas-sao-foco-estudo-quimica-inorganica-55f344765507d.jpg">
+    </ion-img>
+    <br />
+
+    <ion-button expand="full" shape="around" (click)="proximo()">Proximo</ion-button>
+    <ion-button expand="full" shape="around" href="terceirapagina">Voltar</ion-button>
+    <br />
+    <br />
+    <ion-button expand="full" shape="around" href="sugestoes">Deixe sua sugestão aqui!</ion-button>
+  </div>
+</ion-content>

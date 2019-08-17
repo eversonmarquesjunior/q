@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Faça seu cadastro
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-padding">
+    <ion-item>
+      <ion-label position="floating"> Nome: </ion-label>
+      <ion-input type="text" [(ngModel)]="contato.nome" placeholder="Insira o seu nome:"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating"> Idade: </ion-label>
+      <ion-input type="text" [(ngModel)]="contato.idade" placeholder="Insira sua idade:"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating"> Email: </ion-label>
+      <ion-input type="text" [(ngModel)]="contato.email" placeholder ="Insira seu email:"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating"> Senha: </ion-label>
+      <ion-input type="password" [(ngModel)]="contato.senha" placeholder ="Insira sua senha:"></ion-input>
+    </ion-item>
+
+    <br />
+    <br />
+    <ion-button (click)="salvar()" expand="full" shape="around"> Salvar </ion-button>
+    <ion-button href="listar" expand="full" shape="around"> Lista </ion-button>
+    <ion-button href="primeirapagina" expand="full" shape="around"> Próximo </ion-button>
+    <ion-button href="home" expand="full" shape="around"> Voltar </ion-button>
+  </div>
+</ion-content>

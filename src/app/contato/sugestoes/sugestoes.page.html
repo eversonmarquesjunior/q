@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Sugestões</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-padding">
+    <ion-item>
+      <ion-label position="floating"> Sugestões de Substâncias: </ion-label>
+      <br />
+      <ion-input type="text" [(ngModel)]=" sugestao.sg" placeholder="Insira sua sugestão:"></ion-input>
+    </ion-item>
+    <br />
+    <ion-button (click)="salvar2()" expand="full" shape="around"> Salvar </ion-button>
+    <ion-button expand="full" shape="around" href="quartapagina">Voltar</ion-button>
+  </div>
+</ion-content>

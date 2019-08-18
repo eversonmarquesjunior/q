@@ -46,7 +46,7 @@ const routes: Routes = [
   { path: 'cidade-salvar', loadChildren: './cidade/salvar/salvar.module#SalvarPageModule' },
   { path: 'cidade-listar', loadChildren: './cidade/listar/listar.module#ListarPageModule' },
   { path: 'estado-salvar', loadChildren: './estado/salvar/salvar.module#SalvarPageModule' },
-  { path: 'estado-listar', loadChildren: './estado/listar/listar.module#ListarPageModule' }
+  { path: 'estado-listar', loadChildren: './estado/listar/listar.module#ListarPageModule' },
 ];
 
 @NgModule({

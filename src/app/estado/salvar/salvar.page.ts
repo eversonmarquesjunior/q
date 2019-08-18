@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Estado } from '../entidade/estado';
+import { AngularFireDatabase } from '@angular/fire/database';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-salvar',
@@ -7,9 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SalvarPage implements OnInit {
 
-  constructor() { }
+  estado: Estado = new Estado();
+
+  constructor(private fire:AngularFireDatabase, private rota:Router) { }
 
   ngOnInit() {
   }
 
+  salvarest(){
+  this.fire.list('estado').push(this.estado);
+    this.estado = new Estado();
+
+  }
 }

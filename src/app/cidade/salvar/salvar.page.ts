@@ -26,10 +26,9 @@ export class SalvarPage implements OnInit {
   ngOnInit() {
   }
 
-  salvar() {
+  salvarcid() {
     this.fire.list('cidade').push(this.cidade);
     this.cidade = new Cidade();
-    this.rota.navigate(['cidade-listar']);
   }
 
 }

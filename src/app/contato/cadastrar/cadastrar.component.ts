@@ -18,10 +18,9 @@ export class Cadastrar implements OnInit {
 
   salvar() {
     this.banco.list('contato').push(this.contato);
-    this.rota.navigate(['listar']);
+    
     this.contato = new Contato();
     alert('Bem Vindo(a) !!!');
-
   }
 
 }

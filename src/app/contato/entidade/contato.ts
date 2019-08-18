@@ -3,4 +3,5 @@ export class Contato {
   email: string;
   senha: string;
   idade: number; //dtnasc
+
 }

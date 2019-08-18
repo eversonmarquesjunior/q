@@ -10,6 +10,8 @@
   <ion-list>
     <ion-item *ngFor="let contato of listaContatos | async">
       <ion-label>{{ contato.nome }}</ion-label>
+      <ion-label>{{ contato.email }}</ion-label>
+      <ion-label>{{ contato.senha }}</ion-label>
       <ion-label>{{ contato.idade }}</ion-label>
     </ion-item>
   </ion-list>

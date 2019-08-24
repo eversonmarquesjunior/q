@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { Contato } from '../contato/entidade/contato';
 import { AngularFireAuth } from "angularfire2/auth";
+import { Login } from './login/login';
+
 
 @Component({
   selector: 'app-home',
@@ -10,22 +11,22 @@ import { AngularFireAuth } from "angularfire2/auth";
 })
 export class HomePage {
 
-  contato: Contato = new Contato;
+  login: Login = new Login;
 
-  constructor(private rota: Router, private auth: AngularFireAuth) { }
+  constructor(private rota: Router, private afAuth: AngularFireAuth) { }
 
   direcionar() {
     this.rota.navigate(['cadastrar'])
   }
 
-  login(){
-this.auth.auth.signInWithEmailAndPassword(this.contato.email, this.contato.senha).then(
-() => { this.rota.navigate(['pagina']); }
+  logar(){
+this.afAuth.auth.signInWithEmailAndPassword(this.login.email, this.login.senha).then(
+() => { this.rota.navigate(['primeirapagina']); }
 ).catch( (erro) => console.log(erro) );
 }
 
 logout() {
-this.auth.auth.signOut();
+this.afAuth.auth.signOut();
 this.rota.navigate(['/']);
 }
 

@@ -15,7 +15,7 @@ import { Segunda } from './paginas/segundapagina/component.segundapagina';
 import { Terceira } from './paginas/terceirapagina/component.terceirapagina';
 import { Quarta } from './paginas/quartapagina/component.quartapagina';
 import { Cadastrar } from './contato/cadastrar/cadastrar.component';
-import { Listar } from './contato/listar/listar.component';
+import { Listar } from './contato/excluircontato/listar/listar.component';
 import { Sugestoes } from './contato/sugestoes/sugestoes.page';
 import { ListarSugestoes } from './contato/listarsugestoes/listarsugestoes.page';
 

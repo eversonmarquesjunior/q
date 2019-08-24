@@ -19,6 +19,10 @@ export class Listar implements OnInit {
     }))));
   }
 
+  excluir(key){
+    this.banco.list('contato').remove(key);
+    alert("Excluido com sucesso!");
+  }
   ngOnInit() { }
 
 }

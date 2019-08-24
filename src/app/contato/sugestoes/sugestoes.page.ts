@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Sugestao } from '../entidade/sugestao';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { Router } from '@angular/router';
+import { Sugestao } from './entidade/sugestao';
 
 @Component({
   selector: 'app-sugestoes',

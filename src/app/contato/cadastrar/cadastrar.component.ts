@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Contato } from '../entidade/contato';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { Router } from '@angular/router';
+import { Contato } from '../excluircontato/entidade/contato';
 
 @Component({
   selector: 'app-cadastrar',
@@ -18,9 +18,10 @@ export class Cadastrar implements OnInit {
 
   salvar() {
     this.banco.list('contato').push(this.contato);
-    
+
     this.contato = new Contato();
-    alert('Bem Vindo(a) !!!');
+    alert("Salvo com sucesso!");
   }
+
 
 }

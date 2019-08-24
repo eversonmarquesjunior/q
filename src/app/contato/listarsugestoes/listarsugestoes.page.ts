@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { Observable } from 'rxjs';
-import { Sugestao } from '../entidade/sugestao';
 import { map } from 'rxjs/operators';
+import { Sugestao } from '../sugestoes/entidade/sugestao';
 
 @Component({
   selector: 'app-listarsugestoes',

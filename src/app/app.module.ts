@@ -30,12 +30,13 @@ import { Carbono } from './contato/elementos/carbono/carbono.page';
 import { Fluor } from './contato/elementos/fluor/fluor.page';
 import { Hidrogenio } from './contato/elementos/hidrogenio/hidrogenio.page';
 import { Cloro } from './contato/elementos/cloro/cloro.page';
+import { SalvarPageModule } from './cidade/salvar/salvar.module';
 
 @NgModule({
   declarations: [AppComponent, Primeira, Segunda, Terceira, Quarta, Sugestoes, ListarSugestoes, Cadastrar, Listar, Agua, GasCarbonico,
     Sal, Acetona, Vinagre, Oxigenio, Carbono, Fluor, Hidrogenio, Cloro],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, FormsModule,
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, FormsModule, SalvarPageModule,
     AngularFireModule.initializeApp({
       apiKey: "AIzaSyBKKnEJ3TQGCMHRIYtnXMMHr6xfIJka650",
       authDomain: "calcularmm.firebaseapp.com",

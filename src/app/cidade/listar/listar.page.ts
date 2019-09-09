@@ -5,6 +5,8 @@ import { AngularFireDatabase } from '@angular/fire/database';
 import { map } from 'rxjs/operators';
 import { Cidade } from '../entidade/cidade';
 import * as _ from 'lodash';
+import { SalvarPage } from '../salvar/salvar.page';
+import { ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-listar',
@@ -19,7 +21,7 @@ export class ListarPage implements OnInit {
   cidades: any;
   valor: string;
 
-  constructor(private fire: AngularFireDatabase) {
+  constructor(private fire: AngularFireDatabase, private modal:ModalController) {
     this.listaCidades = this.fire.list<Estado>('cidade').snapshotChanges().pipe(map(lista => lista.map(linha => ({
       key: linha.payload.key, ...linha.payload.val()
     }))));
@@ -37,5 +39,16 @@ export class ListarPage implements OnInit {
     this.listaFiltro = _.filter(this.cidades, _.conforms(this.filtro));
   }
 
+  excluir(entidade){
+    this.fire.list('cidade').remove(entidade.key);
+    alert("Excluido com sucesso!");
+  }
+
+  async alterar(entidade){
+    const tela = await this.modal.create({
+      component: SalvarPage, componentProps: {cidade:entidade}
+    });
+    tela.present();
+  }
 
 }

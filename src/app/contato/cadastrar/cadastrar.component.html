@@ -8,31 +8,49 @@
 
 <ion-content>
   <div class="ion-padding">
+    <form #meuForm='ngForm'>
     <ion-item>
       <ion-label position="floating"> Nome: </ion-label>
-      <ion-input type="text" [(ngModel)]="contato.nome" placeholder="Insira o seu nome:"></ion-input>
+      <ion-input #nome='ngModel' type="text" [(ngModel)]="contato.nome" name='nome' placeholder="Insira o seu nome:" required></ion-input>
     </ion-item>
+
+    <span style='color:red' *ngIf="nome.errors && nome.touched">
+      <ion-label>Nome Obrigatório!</ion-label>
+    </span>
 
     <ion-item>
       <ion-label position="floating"> Idade: </ion-label>
-      <ion-input type="text" [(ngModel)]="contato.idade" placeholder="Insira sua idade:"></ion-input>
+      <ion-input #idade='ngModel' type="text" [(ngModel)]="contato.idade" name='idade' placeholder="Insira sua idade:" required></ion-input>
     </ion-item>
+
+    <span style='color:red' *ngIf="idade.errors && idade.touched">
+      <ion-label>Idade Obrigatório!</ion-label>
+    </span>
 
     <ion-item>
       <ion-label position="floating"> Email: </ion-label>
-      <ion-input type="text" [(ngModel)]="contato.email" placeholder ="Insira seu email:"></ion-input>
+      <ion-input #email='ngModel' type="text" [(ngModel)]="contato.email" name='email' placeholder ="Insira seu email:" required></ion-input>
     </ion-item>
+
+    <span style='color:red' *ngIf="email.errors && email.touched">
+      <ion-label>E-mail Obrigatório!</ion-label>
+    </span>
 
     <ion-item>
       <ion-label position="floating"> Senha: </ion-label>
-      <ion-input type="password" [(ngModel)]="contato.senha" placeholder ="Insira sua senha:"></ion-input>
+      <ion-input #senha='ngModel' type="password" [(ngModel)]="contato.senha" name='senha' placeholder ="Insira sua senha:" required></ion-input>
     </ion-item>
+
+    <span style='color:red' *ngIf="senha.errors && senha.touched">
+      <ion-label>Senha Obrigatória!</ion-label>
+    </span>
 
     <br />
     <br />
-    <ion-button (click)="salvar()" expand="full" shape="around"> Salvar </ion-button>
+    <ion-button [disabled]='!meuForm.form.valid' href="cidade-salvar" (click)="salvar()" expand="full" shape="around"> Salvar </ion-button>
     <ion-button href="listar" expand="full" shape="around"> Lista </ion-button>
     <ion-button href="cidade-salvar" expand="full" shape="around"> Próximo </ion-button>
     <ion-button href="home" expand="full" shape="around"> Voltar </ion-button>
+    </form>
   </div>
 </ion-content>

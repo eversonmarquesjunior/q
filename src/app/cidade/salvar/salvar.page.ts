@@ -34,11 +34,11 @@ export class SalvarPage implements OnInit {
 
   salvar() {
     if (this.cidade.key == null) {
-      this.fire.list('estado').push(this.cidade);
+      this.fire.list('cidade').push(this.cidade);
       this.cidade = new Cidade();
-      this.rota.navigate(['estado-listar']);
+      this.rota.navigate(['cidade-listar']);
     } else {
-      this.fire.object('estado/' + this.cidade.key).update(this.cidade);
+      this.fire.object('cidade/' + this.cidade.key).update(this.cidade);
       this.modalController.dismiss();
     }
   }

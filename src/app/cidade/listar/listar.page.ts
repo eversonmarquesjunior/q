@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Estado } from 'src/app/estado/entidade/estado';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { map } from 'rxjs/operators';
 import { Cidade } from '../entidade/cidade';
@@ -15,14 +14,14 @@ import { ModalController } from '@ionic/angular';
 })
 export class ListarPage implements OnInit {
 
-  listaCidades: Observable<Estado[]>;
+  listaCidades: Observable<Cidade[]>;
   listaFiltro: Cidade[];
   filtro = {};
   cidades: any;
   valor: string;
 
   constructor(private fire: AngularFireDatabase, private modal:ModalController) {
-    this.listaCidades = this.fire.list<Estado>('cidade').snapshotChanges().pipe(map(lista => lista.map(linha => ({
+    this.listaCidades = this.fire.list<Cidade>('cidade').snapshotChanges().pipe(map(lista => lista.map(linha => ({
       key: linha.payload.key, ...linha.payload.val()
     }))));
   }
@@ -39,14 +38,14 @@ export class ListarPage implements OnInit {
     this.listaFiltro = _.filter(this.cidades, _.conforms(this.filtro));
   }
 
-  excluir(entidade){
-    this.fire.list('cidade').remove(entidade.key);
+  excluir(key){
+    this.fire.list('cidade').remove(key);
     alert("Excluido com sucesso!");
   }
 
-  async alterar(entidade){
+  async alterar(cidade){
     const tela = await this.modal.create({
-      component: SalvarPage, componentProps: {cidade:entidade}
+      component: SalvarPage, componentProps: {cidade:cidade}
     });
     tela.present();
   }

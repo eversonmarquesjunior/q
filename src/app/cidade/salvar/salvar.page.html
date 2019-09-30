@@ -6,7 +6,7 @@
 
 <ion-content>
 
-  <ion-item>
+  <!--<ion-item>
     <ion-label position="floating">Cidade:</ion-label>
     <ion-input name="nome" [(ngModel)]="cidade.nome"></ion-input>
   </ion-item>
@@ -18,7 +18,29 @@
         {{estado.sigla}}
       </ion-select-option>
     </ion-select>
-  </ion-item>
+  </ion-item>-->
+
+
+    <ion-item>
+      <ion-label>CEP:</ion-label>
+      <ion-input type='text' name='cep' [(ngModel)]="endereco.cep" (ionBlur)="preencher()"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Rua:</ion-label>
+      <ion-input type='text' name='logradouro' [(ngModel)]="endereco.logradouro" (ionBlur)="preencher()"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Bairro:</ion-label>
+      <ion-input type='text' name='bairro' [(ngModel)]="endereco.bairro" (ionBlur)="preencher()"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Cidade:</ion-label>
+      <ion-input type='text' name='localidade' [(ngModel)]="endereco.localidade" (ionBlur)="preencher()"></ion-input>
+    </ion-item>
+
   <br />
   <ion-button expand="full" shape="around" (click)="salvar()">Salvar</ion-button>
   <ion-button href="cidade-listar" expand="full" shape="around"> Lista </ion-button>

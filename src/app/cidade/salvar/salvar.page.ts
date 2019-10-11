@@ -41,12 +41,12 @@ export class SalvarPage implements OnInit {
   }
 
   salvar() {
-    if (this.cidade.key == null) {
-      this.fire.list('cidade').push(this.cidade);
-      this.cidade = new Cidade();
+    if (this.endereco.key == null) {
+      this.fire.list('endereco').push(this.endereco);
+      this.endereco = new Endereco();
       this.rota.navigate(['cidade-listar']);
     } else {
-      this.fire.object('cidade/' + this.cidade.key).update(this.cidade);
+      this.fire.object('endereco' + this.endereco.key).update(this.endereco);
       this.modalController.dismiss();
     }
   }

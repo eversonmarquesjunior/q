@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Faça seu cadastro:
+      <h2>Faça seu cadastro:</h2>
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -47,10 +47,10 @@
 
     <br />
     <br />
-    <ion-button [disabled]='!meuForm.form.valid' href="cidade-salvar" (click)="salvar()" expand="full" shape="around"> Salvar </ion-button>
-    <ion-button href="listar" expand="full" shape="around"> Lista </ion-button>
-    <ion-button href="cidade-salvar" expand="full" shape="around"> Próximo </ion-button>
-    <ion-button href="home" expand="full" shape="around"> Voltar </ion-button>
+    <ion-button [disabled]='!meuForm.form.valid' href="cidade-salvar" (click)="salvar()" expand="full" shape="around" color="warning"><ion-text color="dark"> Salvar </ion-text></ion-button>
+    <ion-button href="listar" expand="full" shape="around" color="warning"><ion-text color="dark"> Lista </ion-text></ion-button>
+    <ion-button href="cidade-salvar" expand="full" shape="around" color="warning"><ion-text color="dark"> Próximo </ion-text></ion-button>
+    <ion-button href="home" expand="full" shape="around" color="warning"><ion-text color="dark"> Voltar </ion-text></ion-button>
     </form>
   </div>
 </ion-content>

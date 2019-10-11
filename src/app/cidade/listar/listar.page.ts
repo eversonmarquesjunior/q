@@ -6,6 +6,7 @@ import { Cidade } from '../entidade/cidade';
 import * as _ from 'lodash';
 import { SalvarPage } from '../salvar/salvar.page';
 import { ModalController } from '@ionic/angular';
+import { Endereco } from '../entidade/endereco';
 
 @Component({
   selector: 'app-listar',
@@ -14,38 +15,38 @@ import { ModalController } from '@ionic/angular';
 })
 export class ListarPage implements OnInit {
 
-  listaCidades: Observable<Cidade[]>;
+  listaEnderecos: Observable<Endereco[]>;
   listaFiltro: Cidade[];
   filtro = {};
   cidades: any;
   valor: string;
 
   constructor(private fire: AngularFireDatabase, private modal:ModalController) {
-    this.listaCidades = this.fire.list<Cidade>('cidade').snapshotChanges().pipe(map(lista => lista.map(linha => ({
+    this.listaEnderecos = this.fire.list<Endereco>('endereco').snapshotChanges().pipe(map(lista => lista.map(linha => ({
       key: linha.payload.key, ...linha.payload.val()
     }))));
   }
 
   ngOnInit() {
-    this.listaCidades.subscribe(cidade => {
-        this.cidades = cidade;
+    this.listaEnderecos.subscribe(endereco => {
+        this.cidades = endereco;
         this.listaFiltro = _.filter(this.cidades, _.conforms(this.filtro));
     })
   }
 
   filtrar(){
-    this.filtro['nome'] = val => val.includes(this.valor);
+    this.filtro['localidade'] = val => val.includes(this.valor);
     this.listaFiltro = _.filter(this.cidades, _.conforms(this.filtro));
   }
 
   excluir(key){
-    this.fire.list('cidade').remove(key);
+    this.fire.list('endereco').remove(key);
     alert("Excluido com sucesso!");
   }
 
-  async alterar(cidade){
+  async alterar(endereco){
     const tela = await this.modal.create({
-      component: SalvarPage, componentProps: {cidade:cidade}
+      component: SalvarPage, componentProps: {endereco:endereco}
     });
     tela.present();
   }

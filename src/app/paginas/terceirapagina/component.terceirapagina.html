@@ -22,9 +22,18 @@
     <ion-img src="https://static.manualdaquimica.com/conteudo/images/elementos-quimicos-na-tabela-periodica-55ae8919448ab.jpg"></ion-img>
     <br />
 
-    <ion-button expand="full" shape="around" (click)="proximo()">Próximo</ion-button>
-    <ion-button expand="full" shape="around" href="segundapagina">Voltar</ion-button>
+    <ion-button color="warning" expand="full" shape="around" (click)="proximo()">
+      <ion-text color="dark">Próximo</ion-text>
+    </ion-button>
+
+    <ion-button color="warning" expand="full" shape="around" href="segundapagina">
+      <ion-text color="dark">Voltar</ion-text>
+    </ion-button>
+
     <br />
     <br />
-    <ion-button expand="full" shape="around" href="quartapagina">Ir para as Substâncias</ion-button>
+
+    <ion-button color="secondary" expand="full" shape="around" href="quartapagina">
+      <ion-text color="dark">Substâncias</ion-text>
+    </ion-button>
   </div>

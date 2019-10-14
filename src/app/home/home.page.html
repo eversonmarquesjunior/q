@@ -20,22 +20,19 @@
     <br />
 
     <ion-card>
-      <ion-card-header>
+      <ion-item>
+        <ion-label position="floating">Email:</ion-label>
+        <ion-input type="text" [(ngModel)]="login.email" color="dark" placeholder="Insira o seu email"></ion-input>
+      </ion-item>
 
-        <ion-item>
-          <ion-label position="floating">Email:</ion-label>
-          <ion-input type="text" [(ngModel)]="login.email" color="dark" placeholder="Insira o seu email"></ion-input>
-        </ion-item>
-
-        <ion-item>
-          <ion-label positon="floating">Senha:</ion-label>
-          <ion-input type="password" [(ngModel)]="login.senha" color="dark" placeholder="Insira a sua senha"></ion-input>
-        </ion-item>
-        
-      </ion-card-header>
+      <ion-item>
+        <ion-label position="floating">Senha:</ion-label>
+        <ion-input type="password" [(ngModel)]="login.senha" color="dark" placeholder="Insira a sua senha"></ion-input>
+      </ion-item>
     </ion-card>
 
     <br />
+
     <ion-button color="warning" expand="full" shape="around" (click)="logar()" expand="full" shape="around">
       <ion-text color="dark">Entrar</ion-text>
     </ion-button>

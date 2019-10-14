@@ -30,10 +30,11 @@ export class SalvarPage implements OnInit {
   ngOnInit() {
   }
 
-  preencher(){
+  /*preencher(){
     this.http.get<Endereco>("https://viacep.com.br/ws/"+this.endereco.cep+"/json/").subscribe(
       (dados) => this.endereco = dados);
   }
+*/
 
   salvarcid() {
     this.fire.list('cidade').push(this.cidade);
@@ -41,12 +42,12 @@ export class SalvarPage implements OnInit {
   }
 
   salvar() {
-    if (this.endereco.key == null) {
-      this.fire.list('endereco').push(this.endereco);
-      this.endereco = new Endereco();
+    if (this.cidade.key == null) {
+      this.fire.list('cidade').push(this.cidade);
+      this.cidade = new Cidade();
       this.rota.navigate(['cidade-listar']);
     } else {
-      this.fire.object('endereco' + this.endereco.key).update(this.endereco);
+      this.fire.object('cidade' + this.cidade.key).update(this.cidade);
       this.modalController.dismiss();
     }
   }

@@ -6,9 +6,9 @@
 
 <ion-content>
 
-  <!--<ion-item>
+  <ion-item>
     <ion-label position="floating">Cidade:</ion-label>
-    <ion-input name="nome" [(ngModel)]="cidade.nome"></ion-input>
+    <ion-input name="nome" [(ngModel)]="cidade.nome" placeholder="Insira o nome da cidade"></ion-input>
   </ion-item>
   <ion-item>
     <ion-label position="floating">Sigla do Estado:</ion-label>
@@ -18,33 +18,44 @@
         {{estado.sigla}}
       </ion-select-option>
     </ion-select>
-  </ion-item>-->
-
-
-    <ion-item>
-      <ion-label>CEP:</ion-label>
-      <ion-input type='text' name='cep' [(ngModel)]="endereco.cep" (ionBlur)="preencher()"></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-label>Rua:</ion-label>
-      <ion-input type='text' name='logradouro' [(ngModel)]="endereco.logradouro" (ionBlur)="preencher()"></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-label>Bairro:</ion-label>
-      <ion-input type='text' name='bairro' [(ngModel)]="endereco.bairro" (ionBlur)="preencher()"></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-label>Cidade:</ion-label>
-      <ion-input type='text' name='localidade' [(ngModel)]="endereco.localidade" (ionBlur)="preencher()"></ion-input>
-    </ion-item>
+  </ion-item>
 
   <br />
-  <ion-button expand="full" shape="around" (click)="salvar()">Salvar</ion-button>
-  <ion-button href="cidade-listar" expand="full" shape="around"> Lista </ion-button>
-  <ion-button href="primeirapagina" expand="full" shape="around"> Próximo </ion-button>
-  <ion-button href="cadastrar" expand="full" shape="around"> Voltar </ion-button>
+
+  <ion-button color="warning" expand="full" shape="around" (click)="salvar()">
+    <ion-text color="dark">Salvar</ion-text>
+  </ion-button>
+  
+  <ion-button color="warning" href="cidade-listar" expand="full" shape="around">
+    <ion-text color="dark">Lista</ion-text>
+  </ion-button>
+
+  <ion-button color="warning" href="primeirapagina" expand="full" shape="around">
+    <ion-text color="dark">Próximo</ion-text>
+  </ion-button>
+
+  <ion-button color="warning" href="cadastrar" expand="full" shape="around">
+    <ion-text color="dark">Voltar</ion-text>
+  </ion-button>
+
+  <!--<ion-item>
+    <ion-label>CEP:</ion-label>
+    <ion-input type='text' name='cep' [(ngModel)]="endereco.cep" (ionBlur)="preencher()"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Rua:</ion-label>
+    <ion-input type='text' name='logradouro' [(ngModel)]="endereco.logradouro" (ionBlur)="preencher()"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Bairro:</ion-label>
+    <ion-input type='text' name='bairro' [(ngModel)]="endereco.bairro" (ionBlur)="preencher()"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Cidade:</ion-label>
+    <ion-input type='text' name='localidade' [(ngModel)]="endereco.localidade" (ionBlur)="preencher()"></ion-input>
+  </ion-item>-->
 
 </ion-content>

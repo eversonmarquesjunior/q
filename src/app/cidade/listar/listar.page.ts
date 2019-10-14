@@ -15,38 +15,38 @@ import { Endereco } from '../entidade/endereco';
 })
 export class ListarPage implements OnInit {
 
-  listaEnderecos: Observable<Endereco[]>;
+  listaCidades: Observable<Cidade[]>;
   listaFiltro: Cidade[];
   filtro = {};
   cidades: any;
   valor: string;
 
   constructor(private fire: AngularFireDatabase, private modal:ModalController) {
-    this.listaEnderecos = this.fire.list<Endereco>('endereco').snapshotChanges().pipe(map(lista => lista.map(linha => ({
+    this.listaCidades = this.fire.list<Cidade>('cidade').snapshotChanges().pipe(map(lista => lista.map(linha => ({
       key: linha.payload.key, ...linha.payload.val()
     }))));
   }
 
   ngOnInit() {
-    this.listaEnderecos.subscribe(endereco => {
-        this.cidades = endereco;
+    this.listaCidades.subscribe(cidade => {
+        this.cidades = cidade;
         this.listaFiltro = _.filter(this.cidades, _.conforms(this.filtro));
     })
   }
 
   filtrar(){
-    this.filtro['localidade'] = val => val.includes(this.valor);
+    this.filtro['nome'] = val => val.includes(this.valor);
     this.listaFiltro = _.filter(this.cidades, _.conforms(this.filtro));
   }
 
   excluir(key){
-    this.fire.list('endereco').remove(key);
+    this.fire.list('cidade').remove(key);
     alert("Excluido com sucesso!");
   }
 
-  async alterar(endereco){
+  async alterar(cidade){
     const tela = await this.modal.create({
-      component: SalvarPage, componentProps: {endereco:endereco}
+      component: SalvarPage, componentProps: {cidade:cidade}
     });
     tela.present();
   }

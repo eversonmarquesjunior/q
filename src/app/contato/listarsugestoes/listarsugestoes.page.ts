@@ -19,6 +19,11 @@ export class ListarSugestoes implements OnInit {
     }))));
   }
 
+  excluirsg(key){
+    this.banco.list('sugestao').remove(key);
+    alert("Excluido com sucesso!");
+  }
+
   ngOnInit() {
   }
 

@@ -8,7 +8,7 @@
 
   <ion-item>
     <ion-label position="floating">Cidade:</ion-label>
-    <ion-input name="nome" [(ngModel)]="cidade.nome" placeholder="Insira o nome da cidade"></ion-input>
+    <ion-input name="nome" [(ngModel)]="cidade.nome"></ion-input>
   </ion-item>
   <ion-item>
     <ion-label position="floating">Sigla do Estado:</ion-label>
@@ -25,7 +25,7 @@
   <ion-button color="warning" expand="full" shape="around" (click)="salvar()">
     <ion-text color="dark">Salvar</ion-text>
   </ion-button>
-  
+
   <ion-button color="warning" href="cidade-listar" expand="full" shape="around">
     <ion-text color="dark">Lista</ion-text>
   </ion-button>

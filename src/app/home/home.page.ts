@@ -19,15 +19,22 @@ export class HomePage {
     this.rota.navigate(['cadastrar'])
   }
 
-  logar(){
-this.afAuth.auth.signInWithEmailAndPassword(this.login.email, this.login.senha).then(
-() => { this.rota.navigate(['primeirapagina']); }
-).catch( (erro) => console.log(erro) );
-}
+  logar() {
+    this.afAuth.auth.signInWithEmailAndPassword(this.login.email, this.login.senha).then(
+      () => { this.rota.navigate(['primeirapagina']); }
+    ).catch((erro) => console.log(erro));
+  }
 
-logout() {
-this.afAuth.auth.signOut();
-this.rota.navigate(['/']);
-}
+  redefinir() {
+    alert('Verifique o seu e-mail');
+    this.afAuth.auth.sendPasswordResetEmail(this.login.email).then(
+      () => alert('Verifique o seu email')); { this.rota.navigate([]); }
+  }
+
+
+  /*logout() {
+  this.afAuth.auth.signOut();
+  this.rota.navigate(['/']);
+  }*/
 
 }

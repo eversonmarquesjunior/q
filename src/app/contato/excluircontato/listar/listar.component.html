@@ -11,11 +11,11 @@
     <ion-item *ngFor="let contato of listaContatos | async">
       <ion-label>{{ contato.nome }}</ion-label>
       <ion-label>{{ contato.email }}</ion-label>
-      <ion-label>{{ contato.senha }}</ion-label>
-      <ion-label>{{ contato.idade }}</ion-label>
-      <ion-button (click) = "excluir(contato.key)">Excluir</ion-button>
+      <!--<ion-label>{{ contato.senha }}</ion-label>
+      <ion-label>{{ contato.idade }}</ion-label>-->
+      <ion-button color="warning" (click)="excluir(contato.key)"><ion-icon color="dark" name="trash"></ion-icon></ion-button>
     </ion-item>
   </ion-list>
   <br />
-  <ion-button href="cadastrar"> Voltar </ion-button>
+  <ion-button color="warning" href="cadastrar" expand="full" shape="around"><ion-text color="dark">Voltar</ion-text></ion-button>
 </ion-content>

@@ -9,48 +9,64 @@
 <ion-content>
   <div class="ion-padding">
     <form #meuForm='ngForm'>
-    <ion-item>
-      <ion-label position="floating"> Nome: </ion-label>
-      <ion-input #nome='ngModel' type="text" [(ngModel)]="contato.nome" name='nome' placeholder="Insira o seu nome:" required></ion-input>
-    </ion-item>
+      <ion-item>
+        <ion-label position="floating"> Nome: </ion-label>
+        <ion-input #nome='ngModel' type="text" [(ngModel)]="contato.nome" name='nome' placeholder="Insira o seu nome:" required></ion-input>
+      </ion-item>
 
-    <span style='color:red' *ngIf="nome.errors && nome.touched">
-      <ion-label>Nome Obrigatório!</ion-label>
-    </span>
+      <span style='color:red' *ngIf="nome.errors && nome.touched">
+        <ion-label>Nome Obrigatório!</ion-label>
+      </span>
 
-    <ion-item>
+      <!--<ion-item>
       <ion-label position="floating"> Idade: </ion-label>
       <ion-input #idade='ngModel' type="text" [(ngModel)]="contato.idade" name='idade' placeholder="Insira sua idade:" required></ion-input>
     </ion-item>
 
     <span style='color:red' *ngIf="idade.errors && idade.touched">
       <ion-label>Idade Obrigatório!</ion-label>
-    </span>
+    </span>-->
 
-    <ion-item>
-      <ion-label position="floating"> Email: </ion-label>
-      <ion-input #email='ngModel' type="text" [(ngModel)]="contato.email" name='email' placeholder ="Insira seu email:" required></ion-input>
-    </ion-item>
+      <ion-item>
+        <ion-label position="floating"> Email: </ion-label>
+        <ion-input #email='ngModel' type="text" [(ngModel)]="contato.email" name='email' placeholder="Insira seu email:" required></ion-input>
+      </ion-item>
 
-    <span style='color:red' *ngIf="email.errors && email.touched">
-      <ion-label>E-mail Obrigatório!</ion-label>
-    </span>
+      <span style='color:red' *ngIf="email.errors && email.touched">
+        <ion-label>E-mail Obrigatório!</ion-label>
+      </span>
 
-    <ion-item>
-      <ion-label position="floating"> Senha: </ion-label>
-      <ion-input #senha='ngModel' type="password" [(ngModel)]="contato.senha" name='senha' placeholder ="Insira sua senha:" required></ion-input>
-    </ion-item>
+      <ion-item>
+        <ion-label position="floating"> Senha: </ion-label>
+        <ion-input #senha='ngModel' type="password" [(ngModel)]="contato.senha" name='senha' placeholder="Insira sua senha:" required></ion-input>
+      </ion-item>
 
-    <span style='color:red' *ngIf="senha.errors && senha.touched">
-      <ion-label>Senha Obrigatória!</ion-label>
-    </span>
+      <span style='color:red' *ngIf="senha.errors && senha.touched">
+        <ion-label>Senha Obrigatória!</ion-label>
+      </span>
 
-    <br />
-    <br />
-    <ion-button [disabled]='!meuForm.form.valid' href="cidade-salvar" (click)="salvar()" expand="full" shape="around" color="warning"><ion-text color="dark"> Salvar </ion-text></ion-button>
-    <ion-button href="listar" expand="full" shape="around" color="warning"><ion-text color="dark"> Lista </ion-text></ion-button>
-    <ion-button href="cidade-salvar" expand="full" shape="around" color="warning"><ion-text color="dark"> Próximo </ion-text></ion-button>
-    <ion-button href="home" expand="full" shape="around" color="warning"><ion-text color="dark"> Voltar </ion-text></ion-button>
+      <br />
+
+        <ion-item>
+          <ion-label>Data de Nascimento:</ion-label>
+          <ion-icon color="dark" name="calendar"></ion-icon>
+          <ion-datetime display-format="DD/MM/YYYY" min="1960-01-31" max="2010-12-31"></ion-datetime>
+        </ion-item>
+
+      <br />
+
+      <ion-button [disabled]='!meuForm.form.valid' href="cidade-salvar" (click)="salvar()" expand="full" shape="around" color="warning">
+        <ion-text color="dark"> Salvar </ion-text>
+      </ion-button>
+      <ion-button href="listar" expand="full" shape="around" color="warning">
+        <ion-text color="dark"> Lista </ion-text>
+      </ion-button>
+      <!--<ion-button href="cidade-salvar" expand="full" shape="around" color="warning">
+        <ion-text color="dark"> Próximo </ion-text>
+      </ion-button>-->
+      <ion-button href="home" expand="full" shape="around" color="warning">
+        <ion-text color="dark"> Voltar </ion-text>
+      </ion-button>
     </form>
   </div>
 </ion-content>

@@ -19,7 +19,7 @@ export class Sugestoes implements OnInit {
 
   salvar2() {
     this.banco.list('sugestao').push(this.sugestao);
-    this.rota.navigate(['listarsugestoes']);
+    this.rota.navigate(['sugestoes']);
     this.sugestao = new Sugestao();
     alert('Obrigado por deixar sua sugestão!');
 

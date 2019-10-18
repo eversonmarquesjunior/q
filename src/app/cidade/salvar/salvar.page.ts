@@ -37,8 +37,9 @@ export class SalvarPage implements OnInit {
 */
 
   salvarcid() {
-    this.fire.list('cidade').push(this.cidade);
+    this.fire.list('cidade-listar').push(this.cidade);
     this.cidade = new Cidade();
+    alert("Salvo com sucesso!");
   }
 
   salvar() {
@@ -46,6 +47,7 @@ export class SalvarPage implements OnInit {
       this.fire.list('cidade').push(this.cidade);
       this.cidade = new Cidade();
       this.rota.navigate(['cidade-listar']);
+      alert("Salvo com sucesso!")
     } else {
       this.fire.object('cidade' + this.cidade.key).update(this.cidade);
       this.modalController.dismiss();
